@@ -1,0 +1,16 @@
+.statistics {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+.text::first-letter {
+  text-transform: uppercase;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
