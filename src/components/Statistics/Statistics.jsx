@@ -15,7 +15,7 @@ const Statistics = ({
 
       {countTotalFeedback > 0 && (
         <div className={s.statistics}>
-          {names.map(([name, val]) => {
+          {Object.entries(names).map(([name, val]) => {
             return (
               <span key={name} className={s.text}>
                 {name} : {val}
@@ -38,7 +38,7 @@ const Statistics = ({
 };
 
 Statistics.propTypes = {
-  names: PropTypes.arrayOf(PropTypes.node.isRequired),
+  names: PropTypes.objectOf(PropTypes.node.isRequired),
   countTotalFeedback: PropTypes.number.isRequired,
   total: PropTypes.string.isRequired,
   countPositiveFeedbackPercentage: PropTypes.number.isRequired,
