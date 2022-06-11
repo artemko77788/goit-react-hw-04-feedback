@@ -7,7 +7,7 @@ import s from './App.module.css';
 function App() {
   const [good, setGood] = useState(0);
   const [bad, setBad] = useState(0);
-  const [netural, setNetural] = useState(0);
+  const [neutral, setNetural] = useState(0);
 
   useEffect(() => {}, []);
 
@@ -21,16 +21,19 @@ function App() {
         setBad(p => p + 1);
         break;
 
-      case 'netural':
+      case 'neutral':
         setNetural(p => p + 1);
         break;
       default:
         return;
     }
   };
+  const options = { good, neutral, bad };
 
   const countTotalFeedback = () => {
-    return good + bad + netural;
+    const sum = Object.values(options).reduce((acc, numb) => acc + numb);
+
+    return sum;
   };
 
   const PositiveFeedbackPercentage = () => {
@@ -38,8 +41,6 @@ function App() {
     const countPositiv = Math.round((100 / count) * good);
     return countPositiv;
   };
-
-  const options = { good, netural, bad };
 
   const total = countTotalFeedback();
   const percent = PositiveFeedbackPercentage();
