@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FeedbackOptions from '../FeedbackOptions';
 import Statistics from '../Statistics';
 import Section from '../Section';
@@ -8,8 +8,6 @@ function App() {
   const [good, setGood] = useState(0);
   const [bad, setBad] = useState(0);
   const [neutral, setNetural] = useState(0);
-
-  useEffect(() => {}, []);
 
   const onLeaveFeedback = name => {
     switch (name) {
