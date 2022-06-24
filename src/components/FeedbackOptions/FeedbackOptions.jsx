@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  const allOptions = Object.entries(options);
   return (
     <div className={s.buttonsList}>
-      {Object.entries(options).map(([name, value]) => {
+      {allOptions.map(([name, value]) => {
         return (
           <button
             key={name}
